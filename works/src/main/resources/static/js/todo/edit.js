@@ -6,7 +6,7 @@ function editBtn(todoNo) {
   //outerHtml : 요소 안에 전채 HTML 문자열 반환 , 요소를 완전히 대체할 수 있다
   //span요소를 input과 textarea로 변경
   titleSpan.outerHTML = `<input name='changeTitle' id='title' value='${titleSpan.textContent}'>`;
-  contentPre.outerHTML = `<textarea name='changeContent' id='content'>${contentPre.textContent}</textarea>`;
+  contentPre.outerHTML = `<textarea name='changeContent' id='editContent'>${contentPre.textContent}</textarea>`;
 
   //수정하기 버튼이 완료로 바뀜
   const editBtnChange = document.querySelector(".editBtn");

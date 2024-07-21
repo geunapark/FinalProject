@@ -14,19 +14,20 @@ $(document).ready(function() {
     
             for(let i = 0; i < data.length ; i++){
                 str += `
-                    <div>
-                        <div>${data[i].metRsvNo}</div>
-                        <div>${data[i].floor} 층</div>
-                        <div>${data[i].name} 회의실</div>
-                        <div>${data[i].rsvDate}</div>
+                    <div id="listTag">
+                        <div style="display: none;";>${data[i].metRsvNo}</div>
+                        <div>층 : ${data[i].floor}층</div>
+                        <div>회의실 : ${data[i].name}회의실</div>
+                        <div>예약날짜 : ${data[i].rsvDate}</div>
                         <div>시작시간 : ${data[i].startDate}</div>
                         <div>종료시간 : ${data[i].endDate}</div>
-                        <div>성함 : ${data[i].empName}</div>
+                        <div>예약자 성함 : ${data[i].empName}</div>
+                        ${loginMember === data[i].empNo 
+                            ? `<button onclick="edit('${data[i].metRsvNo}', '${data[i].floor}', '${data[i].name}', '${data[i].rsvDate}', '${data[i].startDate}', '${data[i].endDate}');">변경하기</button>` 
+                            : ''
+                        }
                     </div>
                 `;
-                if(loginMember === data[i].empNo){
-                    str += `<button onclick="edit('${data[i].metRsvNo}', '${data[i].floor}', '${data[i].name}', '${data[i].rsvDate}', '${data[i].startDate}', '${data[i].endDate}');">변경하기</button>`;
-                }
             }
             
             content.innerHTML = str;
@@ -122,3 +123,38 @@ function closeBtn() {
     const detail = document.querySelector("#detail");
     detail.style.display = "none";
 }
+
+var divTag = document.querySelector("#meetingImg");
+var slides = document.querySelectorAll(".items");
+var slidesCnt = slides.length;
+
+var slider = document.querySelector(".slider");
+
+// 초기 슬라이드 컨테이너의 너비와 슬라이드의 너비를 계산
+function updateSliderWidth() {
+    var divTagWidth = divTag.clientWidth;
+    slider.style.width = (divTagWidth * slidesCnt) + 'px';
+    return divTagWidth;
+}
+
+var divTagWidth = updateSliderWidth();
+var slidIndex = 0;
+
+// 슬라이드를 자동으로 전환하는 함수
+function showSlides() {
+    slidIndex++;
+    if (slidIndex >= slidesCnt) {
+        slidIndex = 0;
+    }
+    slider.style.transform = `translateX(${-divTagWidth * slidIndex}px)`;
+    setTimeout(showSlides, 3000);
+}
+
+// 슬라이드 쇼 시작
+showSlides();
+
+// 윈도우 크기 변경 시 슬라이드 컨테이너 너비 업데이트
+window.addEventListener('resize', function() {
+    divTagWidth = updateSliderWidth();
+    slider.style.transform = `translateX(${-divTagWidth * slidIndex}px)`;
+});
