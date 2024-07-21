@@ -458,3 +458,8 @@ button[type="submit"] i {
   display: flex;
   height: 30px;
 }
+
+#editContent{
+  width: 300px;
+  height: 500px;
+}

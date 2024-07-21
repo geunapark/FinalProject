@@ -18,16 +18,28 @@
         
         <div id="main">
             <div id="meetingList">
-                <div>실시간 회의실 현황</div>
+                <h1>실시간 회의실  예약 현황</h1>
                 <div id="meetingContent">
-
                 </div>
                 <div style="display: none;" id="detail">
-
                 </div>
             </div>
             <div style="display: none;" id="loginMember">${loginEmpVo.no}</div>
-            <div id="meetingImg">이미지 들어올거임</div>
+            <div id="meetingImg">
+                <div class="overlay">
+                    <div class="overlay-text">
+                        저희 <h2>Baby-Works는</h2>임원분들을 위해
+                        최상의 회의실을 제공합니다
+                    </div>
+                </div>
+                <ul class="slider">
+                    <li class="items"><img src="/img/rent/회의실10.jpg" alt=""></li>
+                    <li class="items"><img src="/img/rent/회의실9.jpg" alt=""></li>
+                    <li class="items"><img src="/img/rent/회의실6.jpg" alt=""></li>
+                    <li class="items"><img src="/img/rent/회의실7.jpg" alt=""></li>
+                    <li class="items"><img src="/img/rent/회의실8.jpg" alt=""></li>
+                </ul>
+            </div>
         </div>
     </main>
 

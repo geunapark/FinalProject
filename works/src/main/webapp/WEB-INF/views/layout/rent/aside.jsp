@@ -4,7 +4,7 @@
 
 <aside>
     <div>
-        <div><a href="">회의실 예약 확인하기</a></div>
-        <div><a href="">차량 예약 확인하기</a></div>
+        <div><a href="/rent/meeting">회의실 예약 확인하기</a></div>
+        <div><a href="/rent/car">차량 예약 확인하기</a></div>
     </div>
 </aside>

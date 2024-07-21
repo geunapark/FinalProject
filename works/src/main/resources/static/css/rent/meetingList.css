@@ -23,18 +23,72 @@ main{
 #meetingList{
     width: 50%;
     height: 100%;
-    background-color: palevioletred;
+    display: flex;
+    flex-direction: column;
+}
+
+#meetingContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-items: center; /* 수평 가운데 정렬 */
+    gap: 10px; /* 그리드 셀 간의 간격 */
 }
 
 #meetingImg{
     width: 50%;
     height: 100%;
-    background-color: lightblue;;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.slider {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500%; /* 슬라이드 컨테이너의 너비를 100%로 설정 */
+    height: 100%; /* 슬라이드 컨테이너의 높이를 100%로 설정 */
+    transition: transform 0.5s ease-in-out; 
+}
+
+.items {
+    width: 20%; /* 각 슬라이드의 너비를 슬라이드 컨테이너에 맞춤 */
+    height: 100%; /* 각 슬라이드의 높이를 슬라이드 컨테이너에 맞춤 */
+    flex-shrink: 0; /* 슬라이드가 축소되지 않도록 설정 */
+}
+
+.items img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지가 부모 요소에 맞게 조정되도록 설정 */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 반투명 검정색 배경 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* 텍스트 색상 */
+    z-index: 10; /* 텍스트가 이미지 위에 오도록 설정 */
+    opacity: 1; /* 항상 보이도록 설정 */
+    transition: opacity 0.5s ease-in-out; /* 부드러운 전환 효과 */
+}
+
+.overlay-text {
+    font-size: 24px; /* 텍스트 크기 조정 */
 }
 
 #detail{
     width: 300px;
-    height: 500px;
+    height: 550px;
     color: black;
     background-color: rgb(255, 255, 255);
     position: absolute; 
@@ -46,4 +100,12 @@ main{
     padding: 30px;
     box-shadow: 0px 0px 10px rgba(219, 17, 114, 0.2); 
     border-radius: 8px; 
+}
+
+#listTag{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 150px;
+    border: 1px solid black;
 }
