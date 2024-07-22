@@ -28,3 +28,8 @@ main{
 #like.liked {
     color: #f005dc;
 }
+
+#postContent img{
+    width: 300px;
+    height: 200px;
+}

@@ -71,6 +71,7 @@ function submitPost() {
         contentType: false,
         success: function() {
             alert('포스트가 작성되었습니다.');
+            window.location.href = "/board/list";
         },
         error: function(xhr, status, error) {
             console.error('Error:', error);

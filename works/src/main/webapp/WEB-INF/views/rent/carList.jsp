@@ -28,19 +28,19 @@
             </div>
             <div style="display: none;" id="loginMember">${loginEmpVo.no}</div>
             <div id="carImg">
+                <ul class="slider">
+                    <li class="items"><img src="/img/rent/차량1.jpg" alt=""></li>
+                    <li class="items"><img src="/img/rent/차량2.jpg" alt=""></li>
+                    <li class="items"><img src="/img/rent/차량3.jpg" alt=""></li>
+                    <li class="items"><img src="/img/rent/차량4.jpg" alt=""></li>
+                    <li class="items"><img src="/img/rent/차량5.jpg" alt=""></li>
+                </ul>
                 <div class="overlay">
                     <div class="overlay-text">
                         저희 <h2>Baby-Works는</h2>
                         임원분들의 편안한 출장과 워크샵을 위하여
                         최상의 차량을 제공합니다
                     </div>
-                    <ul class="slider">
-                        <li class="items"><img src="/img/rent/차량1.jpg" alt=""></li>
-                        <li class="items"><img src="/img/rent/차량2.jpg" alt=""></li>
-                        <li class="items"><img src="/img/rent/차량3.jpg" alt=""></li>
-                        <li class="items"><img src="/img/rent/차량4.jpg" alt=""></li>
-                        <li class="items"><img src="/img/rent/차량5.jpg" alt=""></li>
-                    </ul>
                 </div>
             </div>
         </div>
