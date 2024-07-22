@@ -165,3 +165,39 @@ function cancel(no) {
         }
     })    
 }
+
+
+var divTag = document.querySelector("#carImg");
+var slides = document.querySelectorAll(".items");
+var slidesCnt = slides.length;
+
+var slider = document.querySelector(".slider");
+
+// 초기 슬라이드 컨테이너의 너비와 슬라이드의 너비를 계산
+function updateSliderWidth() {
+    var divTagWidth = divTag.clientWidth;
+    slider.style.width = (divTagWidth * slidesCnt) + 'px';
+    return divTagWidth;
+}
+
+var divTagWidth = updateSliderWidth();
+var slidIndex = 0;
+
+// 슬라이드를 자동으로 전환하는 함수
+function showSlides() {
+    slidIndex++;
+    if (slidIndex >= slidesCnt) {
+        slidIndex = 0;
+    }
+    slider.style.transform = `translateX(${-divTagWidth * slidIndex}px)`;
+    setTimeout(showSlides, 3000);
+}
+
+// 슬라이드 쇼 시작
+showSlides();
+
+// 윈도우 크기 변경 시 슬라이드 컨테이너 너비 업데이트
+window.addEventListener('resize', function() {
+    divTagWidth = updateSliderWidth();
+    slider.style.transform = `translateX(${-divTagWidth * slidIndex}px)`;
+});
