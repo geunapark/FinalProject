@@ -123,6 +123,7 @@ like.addEventListener("click", () => {
             }
             ,success:()=>{
                 alert("My게시판에 추가되었습니다")
+                window.location.href = "/board/wishList/mylist";
             }
 
         })

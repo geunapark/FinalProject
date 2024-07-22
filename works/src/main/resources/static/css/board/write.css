@@ -63,9 +63,5 @@ main{
 .imgTag{
     width: 300px;
     height: 200px;
-    resize: both;
-    overflow: auto;
-    border: 1px solid #ccc;
-    margin-top: 10px;
 }
 

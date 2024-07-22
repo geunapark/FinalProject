@@ -32,8 +32,6 @@ main{
     height: 100%;
     position: relative;
     overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 그림자 추가 */
-    z-index: 1; /* 텍스트가 이미지 위에 보이도록 */
 }
 
 .slider {
@@ -70,9 +68,6 @@ main{
     justify-content: center;
     color: white; /* 텍스트 색상 */
     z-index: 2; /* 텍스트가 이미지 위에 보이도록 */
-    opacity: 1; /* 항상 보이도록 설정 */
-    transition: opacity 0.5s ease-in-out; /* 부드러운 전환 효과 */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 그림자 추가 */
 }
 
 .overlay-text {
