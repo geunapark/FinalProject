@@ -14,5 +14,4 @@
 - 급한사정이나 일정이 생길경우 휴가서 작성해서 싸인 받아가세요 최종싸인은 -> 심원용강사님 :)
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=geunapark&show_icons=true&theme=radical)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=geunapark&layout=compact)](https://github.com/geunapark/github-readme-stats)
 
