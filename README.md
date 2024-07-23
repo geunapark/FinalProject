@@ -13,6 +13,6 @@
 - 들을 수 있습니다 :)
 - 급한사정이나 일정이 생길경우 휴가서 작성해서 싸인 받아가세요 최종싸인은 -> 심원용강사님 :)
 
-<br>;
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=FinalProject&show_icons=true&theme=radical)
+
+
 
