@@ -8,7 +8,6 @@ import java.util.List;
 @Mapper
 public interface AttendMapper {
 
-    //이해가 꼭 필요한 쿼리문
     //1.특정 사원의 출퇴근 기록을 조회하여 2.기록을 월별로 나누고 3.월 내에서 몇 번째 주에 해당하는지 계산하여 4.결과를 정렬해 준다.
     @Select("""
             WITH WEEK_CALCUL AS (

@@ -2,7 +2,7 @@ package com.kh.works.alarm.vo;
 
 import lombok.Data;
 
-//알림 Socket 기능을 위한 Vo입니다.
+//알림 Socket 기능을 위한 Vo이다.
 @Data
 public class AlarmVo {
 

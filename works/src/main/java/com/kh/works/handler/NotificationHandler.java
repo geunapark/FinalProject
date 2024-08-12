@@ -14,18 +14,21 @@ public class NotificationHandler extends TextWebSocketHandler {
 
     private final CopyOnWriteArrayList<WebSocketSession> sessions = new CopyOnWriteArrayList<>();
 
+    //소켓 연결 후 메서드
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         sessions.add(session);
         System.out.println("WebSocket session added: " + session.getId());
     }
 
+    //소켓 연결해제 후 메서드
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
         sessions.remove(session);
         System.out.println("WebSocket session removed: " + session.getId());
     }
 
+    //알림 전송 메서드
     public void sendNotification(String message) {
         for (WebSocketSession session : sessions) {
             try {
