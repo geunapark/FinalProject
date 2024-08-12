@@ -36,7 +36,7 @@ public class HomeController {
         String empNo = loginEmpVo.getNo();
         System.out.println("empNo = " + empNo);
 
-        //********이렇게 다른 테이블Vo 받아오면 된다.이렇게 하면 jsp에서 사용하기 가능. 정리하자!!!!!!!!!!!
+        //********이렇게 다른 테이블Vo 받아오면 된다.이렇게 하면 jsp에서 사용하기 가능.
         AttendVo attendVo = service.getAttendInfo(empNo);
 
         model.addAttribute("loginEmpVo", loginEmpVo);

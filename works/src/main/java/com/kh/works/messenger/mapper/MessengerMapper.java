@@ -18,7 +18,7 @@ public interface MessengerMapper {
 
     //그런데 employeeVo에서 positionName, deptName을 생성하면 되는데, 다른 분 코드를 건드리는 거니까 가급적 피한다.
     //그렇기 때문에 별칭을 이미 employeeVo에 있는 positionNo와 deptNo로 작성한다.
-    //EmployeeVo를 가져와, write.jsp에서 positionNo와 deptNo로 사용하기 위해 "@Results"를 사용해서 칼럼명을 지정해 준다.
+    //EmployeeVo를 가져와, write.jsp에서 positionNo와 deptNo로 사용하기 위해 "@Results" 매핑을 사용해서 칼럼명을 지정해 준다.
     @Select("SELECT E.NO , E.NAME , P.NAME AS positionNO , D.NAME AS deptNO FROM EMPLOYEE E JOIN POSITION P ON E.POSITION_NO = P.NO JOIN DEPARTMENT D ON E.DEPT_NO = D.NO")
     @Results({
             @Result(property = "name", column = "name"),
@@ -61,7 +61,7 @@ public interface MessengerMapper {
     @Select("SELECT M.MESSEN_NO, CASE WHEN M.SENDER_EMP_NO = MS.EMP_NO THEN E2.NAME ELSE E1.NAME END AS NAME, M.TITLE, M.CONTENT, M.SEND_DATE FROM MESSENGER M JOIN EMPLOYEE E1 ON M.SENDER_EMP_NO = E1.NO JOIN EMPLOYEE E2 ON M.RECEIVER_EMP_NO = E2.NO LEFT JOIN MESSENGER_STATUS MS ON M.MESSEN_NO = MS.MESSEN_NO AND MS.EMP_NO = #{empNo} WHERE (MS.IS_TRASH = 'N' OR MS.IS_TRASH IS NULL) AND MS.IS_IMPORTANT = 'Y' ORDER BY M.SEND_DATE DESC")
     List<MessengerVo> getImportantList(@Param("empNo") String empNo);
 
-    //테이블 새로 추가했기 때문에 -> 쿼리문도 수정함. 다시 확인 후 주석 달자.
+    //테이블(MESSENGER_STATUS) 새로 추가했기 때문에 -> 쿼리문도 수정. MERGE INTO 구문 사용.
     @Insert("""
             MERGE INTO MESSENGER_STATUS MS
             USING (SELECT #{messenNo} AS MESSEN_NO, #{empNo} AS EMP_NO FROM DUAL) src
@@ -91,7 +91,7 @@ public interface MessengerMapper {
     List<MessengerVo> trash(String empNo);
 
     //휴지통쪽지함으로 이동하는 메서드
-    //테이블 새로 추가했기 때문에 -> 쿼리문도 수정함. 다시 확인 후 주석 달자.
+    //테이블(MESSENGER_STATUS) 새로 추가했기 때문에 -> 쿼리문도 수정. MERGE INTO 구문 사용.
     @Insert("""
             MERGE INTO MESSENGER_STATUS MS
             USING (SELECT #{messenNo} AS MESSEN_NO, #{empNo} AS EMP_NO FROM DUAL) src
