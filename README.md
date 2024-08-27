@@ -30,7 +30,7 @@
 ## 주요기능 설명
 <div align="center">
   <img src="https://github.com/user-attachments/assets/76edbbe6-4509-4d9b-8b1c-4b56c29a687b" width="300px" height="350px" />
-  <img src="https://github.com/user-attachments/assets/7fcd32e4-0f4a-45fe-a117-0b8b79369ea9" width="300px" />
+  <img src="https://github.com/user-attachments/assets/7fcd32e4-0f4a-45fe-a117-0b8b79369ea9" width="300px" height="350px" />
 </div>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/071ad674-a2ec-43e1-a2d9-d103a23fb411" width="300px" height="350px" />
