@@ -6,8 +6,7 @@
   - [프로젝트 목표](#프로젝트-목표)
   - [기술 스택](#기술-스택)
   - [주요기능 설명](#주요기능-설명)
-  - [구현내용](#구현내용)
-  - [소감](#소감)
+
 
 ## 개요
 -  프로젝트 이름 : BABY WORK'S 👧🏻
@@ -37,7 +36,7 @@
   <img src="https://github.com/user-attachments/assets/2bc83dee-eef2-413a-bfb5-b338772371df" width="300px" height="350px" />
 </div>
 
-## 구현내용
+
 
 
 
